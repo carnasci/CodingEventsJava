@@ -4,15 +4,18 @@
     <meta charset="UTF-8"/>
     <title>Coding Events</title>
 </head>
-<body>
+<body class="container">
 
 <h1>All Events</h1>
+
+<p th:unless="${events} and ${events.size()}" >No Events!</p>
 
 <ul>
     <th:block th:each="event : ${events}">
         <li th:text="${event}"></li>
     </th:block>
 </ul>
+<nav th:fragment="fragments :: navigation" ></nav>
 
 </body>
 </html>
